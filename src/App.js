@@ -1,6 +1,7 @@
 import React from 'react'
 
-const category = 'Posts da semana'
+import { Header, Post } from './components'
+
 
 function App() {
   return (
@@ -9,10 +10,28 @@ function App() {
      * <React.Fragment></React.Fragment>
      * <Fragment></Fragment>
      * <></>
-    */ 
+    */
     <>
-      <h1>JStack's Blog</h1>
-      <h2>{category}: {new Date().toLocaleDateString()}</h2>
+      <Header title="JStack's Blog">
+        <h2>Posts da semana</h2>
+      </Header>
+
+      <Post
+        likes={20}
+        post={{
+          title: 'Títuilo 01',
+          subtitle: 'Subtítulo 01'
+        }}
+      />
+
+      <Post
+        post={{
+          title: 'Títuilo 02',
+          subtitle: 'Subtítulo 02'
+        }}
+      />
+
+      <Post />
     </>
   )
 }
