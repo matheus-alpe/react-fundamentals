@@ -15,6 +15,7 @@ function App() {
       <Header title="JStack's Blog">
         <h2>Posts da semana</h2>
       </Header>
+      <Header />
 
       <Post
         likes={20}
@@ -25,13 +26,12 @@ function App() {
       />
 
       <Post
+        likes={10}
         post={{
           title: 'Títuilo 02',
           subtitle: 'Subtítulo 02'
         }}
       />
-
-      <Post />
     </>
   )
 }
