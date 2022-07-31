@@ -1,42 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Header, Post } from './components'
 
-const posts = [
-  {
-    title: 'Título 01',
-    subtitle: 'Subtítulo 01',
-    likes: 20
-  },
-  {
-    title: 'Título 02',
-    subtitle: 'Subtítulo 02',
-    likes: 10
-  },
-  {
-    title: 'Título 03',
-    subtitle: 'Subtítulo 03',
-    likes: 50
-  },
-]
 
 function App() {
+  const [posts, setPosts] = useState([
+    {
+      id: Date.now(),
+      title: 'Título 01',
+      subtitle: 'Subtítulo 01',
+      likes: 20
+    },
+  ])
+
+  function handleRefresh() {
+    setPosts((prevPostsState) => {
+      const newPost = {
+        id: Date.now(),
+        title: `Título ${String(prevPostsState.length + 1).padStart(2, '0')}`,
+        subtitle: `Subtítulo ${String(prevPostsState.length + 1).padStart(2, '0')}`,
+        likes: 50
+      }
+
+      return [...prevPostsState, newPost]
+    })
+  }
+
+  function handleRemovePost(postId) {
+    setPosts((prevPostsState) => prevPostsState.filter(postState => postState.id !== postId))
+  }
+
   return (
-    /**
-     * React fragment in three ways:
-     * <React.Fragment></React.Fragment>
-     * <Fragment></Fragment>
-     * <></>
-    */
     <>
       <Header title="JStack's Blog">
-        <h2>Posts da semana</h2>
+        <h2>
+          Posts da semana
+          <button onClick={handleRefresh}>Atualizar</button>
+        </h2>
       </Header>
 
       {posts.map(post => (
         <Post
-          key={post.title}
-          likes={post.likes}
+          key={post.id}
+          onRemove={handleRemovePost}
           post={post}
         />
       ))}

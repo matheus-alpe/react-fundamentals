@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from 'prop-types'
 
-export function Post({ post = {}, likes }) {
+export function Post({ post = {}, likes, onRemove }) {
   return (
     <>
       <article>
-        <h3>{post.title}</h3>
+        <h3>{post.title} <button onClick={() => onRemove(post.id)}>Remover</button></h3>
         <p>{post.subtitle}</p>
-        <small>Média: {likes / 2}</small>
+        <small>Curtidas: {post.likes}</small>
       </article>
       <br/>
     </>
@@ -15,9 +15,10 @@ export function Post({ post = {}, likes }) {
 }
 
 Post.propTypes = {
-  likes: PropTypes.number.isRequired,
+  onRemove: PropTypes.func.isRequired,
   post: PropTypes.shape({
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
+    likes: PropTypes.number.isRequired,
   }).isRequired,
 }
