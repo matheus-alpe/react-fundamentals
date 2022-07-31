@@ -1,5 +1,7 @@
 import React from 'react'
 
+const category = 'Posts da semana'
+
 function App() {
   return (
     /**
@@ -9,8 +11,8 @@ function App() {
      * <></>
     */ 
     <>
-      <h1>Componente App</h1>
-      <h2>Subtitulo</h2>
+      <h1>JStack's Blog</h1>
+      <h2>{category}: {new Date().toLocaleDateString()}</h2>
     </>
   )
 }
