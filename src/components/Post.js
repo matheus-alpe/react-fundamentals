@@ -5,7 +5,9 @@ export function Post({ post = {}, likes, onRemove }) {
   return (
     <>
       <article>
-        <h3>{post.title} <button onClick={() => onRemove(post.id)}>Remover</button></h3>
+        <h3>
+          {post.read ? <s>{post.title}</s> : post.title} <button onClick={() => onRemove(post.id)}>Remover</button>
+        </h3>
         <p>{post.subtitle}</p>
         <small>Curtidas: {post.likes}</small>
       </article>
@@ -20,5 +22,6 @@ Post.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired,
+    read: PropTypes.bool.isRequired,
   }).isRequired,
 }
