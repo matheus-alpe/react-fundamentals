@@ -8,13 +8,18 @@ export function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext)
   
   return (
-    <>
+    <header
+      style={{
+        background: '#ccc',
+        fontFamily: 'sans-serif'
+      }}
+    >
       <h1>{props.title}</h1>
       <Button onClick={onToggleTheme}>Mudar Tema</Button>
       {props.children}
 
       <hr />
-    </>
+    </header>
   )
 }
 
