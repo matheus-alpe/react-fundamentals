@@ -12,14 +12,16 @@ function App() {
       title: 'Título 01',
       subtitle: 'Subtítulo 01',
       likes: 20,
-      read: false
+      read: false,
+      removed: true
     },
     {
       id: Date.now() + 1,
       title: 'Título 02',
       subtitle: 'Subtítulo 02',
       likes: 30,
-      read: true
+      read: true,
+      removed: false
     },
   ])
 
@@ -30,7 +32,8 @@ function App() {
         title: `Título ${String(prevPostsState.length + 1).padStart(2, '0')}`,
         subtitle: `Subtítulo ${String(prevPostsState.length + 1).padStart(2, '0')}`,
         likes: 50,
-        read: false
+        read: false,
+        removed: false
       }
 
       return [...prevPostsState, newPost]
@@ -38,7 +41,18 @@ function App() {
   }
 
   function handleRemovePost(postId) {
-    setPosts((prevPostsState) => prevPostsState.filter(postState => postState.id !== postId))
+    setPosts((prevPostsState) => prevPostsState.map(postState => {
+      const post = {
+        ...postState
+      }
+
+      if (postState.id === postId) {
+        post.removed = true;
+        console.log(post)
+      }
+
+      return post
+    }))
   }
 
   return (
