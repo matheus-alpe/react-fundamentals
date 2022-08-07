@@ -3,6 +3,8 @@ import React, { useState, createContext } from 'react'
 import { ThemeProvider } from '../../contexts'
 import { Header, Post, Button } from '..'
 
+import { Title } from './styles'
+
 function App() {
 
   const [posts, setPosts] = useState([
@@ -59,10 +61,10 @@ function App() {
         title="JStack's Blog"
         
       >
-        <h2>
+        <Title as="h2">
           Posts da semana
           <Button onClick={handleRefresh}>Atualizar</Button>
-        </h2>
+        </Title>
       </Header>
 
       {posts.map(post => (

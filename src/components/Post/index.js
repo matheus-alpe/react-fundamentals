@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { PostHeader } from './PostHeader'
 
 import styles from './Post.scss'
+import { Subtitle, Likes } from './styles'
 
 export function Post({ post = {}, likes, onRemove }) {
   return (
@@ -21,8 +22,8 @@ export function Post({ post = {}, likes, onRemove }) {
           read: post.read
         }}
       />
-      <p>{post.subtitle}</p>
-      <small>Curtidas: {post.likes}</small>
+      <Subtitle>{post.subtitle}</Subtitle>
+      <Likes>Curtidas: {post.likes}</Likes>
     </article>
   )
 }
