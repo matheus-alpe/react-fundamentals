@@ -3,7 +3,6 @@ import React, { useState, createContext } from 'react'
 import { ThemeProvider } from '../../contexts'
 import { Header, Post, Button } from '..'
 
-
 function App() {
 
   const [posts, setPosts] = useState([
