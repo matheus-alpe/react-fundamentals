@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react'
 
-import { ThemeProvider } from './contexts'
-import { Header, Post, Button } from './components'
+import { ThemeProvider } from '../../contexts'
+import { Header, Post, Button } from '..'
 
 
 function App() {
@@ -47,8 +47,7 @@ function App() {
       }
 
       if (postState.id === postId) {
-        post.removed = true;
-        console.log(post)
+        post.removed = true
       }
 
       return post
