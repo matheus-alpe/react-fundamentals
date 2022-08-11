@@ -1,17 +1,13 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
 import { Container } from './styles';
 
-export default function Header({ onToggleTheme, selectedTheme }) {
+import ThemeSwitcher from '../ThemeSwitcher'
+
+export default function Header() {
   return (
     <Container>
       <h1>JStack's Blog</h1>
-      <button
-        type="button"
-        onClick={onToggleTheme}
-      >
-        {selectedTheme === 'dark' ? '🌞' : '🌚' }
-      </button>
+      <ThemeSwitcher />
     </Container>
   );
 }

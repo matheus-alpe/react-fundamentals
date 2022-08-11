@@ -2,16 +2,13 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Footer({ onToggleTheme, selectedTheme }) {
+import ThemeSwitcher from '../ThemeSwitcher'
+
+export default function Footer() {
   return (
     <Container>
       <span>JStack's Blog. Todos os direitos reservados.</span>
-      <button
-        type="button"
-        onClick={onToggleTheme}
-      >
-        {selectedTheme === 'dark' ? '🌞' : '🌚' }
-      </button>
+      <ThemeSwitcher />
     </Container>
   );
 }
