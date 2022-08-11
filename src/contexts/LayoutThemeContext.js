@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo } from 'react'
+import React, { useState, createContext, useMemo, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import themes from '../styles/themes'
@@ -13,9 +13,19 @@ export function LayoutThemeProvider(props) {
   }, [theme])
 
   function handleToggleTheme() {
-    setTheme((prevThemeState) => prevThemeState === 'dark' ? 'light' : 'dark')
+    setTheme((prevThemeState) => {
+      const theme = prevThemeState === 'dark' ? 'light' : 'dark'
+      window.localStorage.setItem('theme', theme)
+      return theme
+    })
   }
 
+  // hooks
+  useEffect(() => {
+    const theme = window.localStorage.getItem('theme')
+    if (!theme) return
+    setTheme(theme)
+  }, [])
 
   return (
     <ThemeProvider theme={currentTheme}>
