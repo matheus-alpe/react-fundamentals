@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 
 import { LayoutThemeProvider } from './contexts'
 
@@ -7,6 +7,14 @@ import Layout from './components/Layout';
 
 
 function App() {
+
+  useEffect(() => {
+    console.debug('useEffect disparado')
+  }, [])
+
+  useLayoutEffect(() => {
+    console.debug('useLayoutEffect disparado')
+  }, [])
 
   return (
     <LayoutThemeProvider>
