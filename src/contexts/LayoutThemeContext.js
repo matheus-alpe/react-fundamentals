@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo, useEffect } from 'react'
+import React, { useState, createContext, useMemo, useEffect, useRef } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import themes from '../styles/themes'
@@ -26,6 +26,16 @@ export function LayoutThemeProvider(props) {
     if (!theme) return
     setTheme(theme)
   }, [])
+
+  //not execute on first render
+  const isFirstRender = useRef(true)
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    console.debug('useEffect after first render')
+  }, [theme])
 
   return (
     <ThemeProvider theme={currentTheme}>
