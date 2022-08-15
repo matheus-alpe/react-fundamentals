@@ -9,11 +9,11 @@ export class LayoutThemeProvider extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      theme: window.localStorage.getItem('theme') || 'dark'
-    }
-
     this.handleToggleTheme = this.handleToggleTheme.bind(this)
+  }
+
+  state = {
+    theme: window.localStorage.getItem('theme') || 'dark'
   }
 
   handleToggleTheme() {
