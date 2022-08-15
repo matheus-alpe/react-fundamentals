@@ -6,17 +6,11 @@ import themes from '../styles/themes'
 export const ThemeContext = createContext()
 
 export class LayoutThemeProvider extends Component {
-  constructor(props) {
-    super(props)
-
-    this.handleToggleTheme = this.handleToggleTheme.bind(this)
-  }
-
   state = {
     theme: window.localStorage.getItem('theme') || 'dark'
   }
 
-  handleToggleTheme() {
+  handleToggleTheme = () => {
     this.setState(prevState => {
       const theme = (prevState.theme === 'dark' ? 'light' : 'dark')
       window.localStorage.setItem('theme', theme)
