@@ -11,25 +11,18 @@ export class LayoutThemeProvider extends Component {
   }
 
   handleToggleTheme = () => {
-    console.log('handleToggleTheme executed')
+    this.setState(prevState => {
+      const theme = (prevState.theme === 'dark' ? 'light' : 'dark')
+      window.localStorage.setItem('theme', theme)
 
-    // force component rendering
-    this.forceUpdate();
-
-    // this.setState(prevState => {
-    //   const theme = (prevState.theme === 'dark' ? 'light' : 'dark')
-    //   window.localStorage.setItem('theme', theme)
-
-    //   return {
-    //     theme
-    //   }
-    // })
+      return {
+        theme
+      }
+    })
   }
 
   render() {
     const { theme } = this.state
-
-    console.log('App renderizou')
 
     return (
       <ThemeProvider theme={themes[theme] || themes.dark}>
