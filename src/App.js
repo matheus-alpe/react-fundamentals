@@ -23,6 +23,12 @@ class App extends Component {
     console.log('componentDidCatch executed', { error, info })
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate executed', { nextProps, nextState })
+
+    return true
+  }
+
   render() {
     return (
       <LayoutThemeProvider>
