@@ -7,6 +7,10 @@ import Layout from './components/Layout'
 
 
 class App extends Component {
+  componentDidMount() {
+    console.debug('componentDidMount executed')
+  }
+
   render() {
     return (
       <LayoutThemeProvider>
