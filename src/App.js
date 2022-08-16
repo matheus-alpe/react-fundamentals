@@ -7,13 +7,22 @@ import Layout from './components/Layout'
 
 
 class App extends Component {
+  state = {
+    changed: false
+  }
+
   componentDidMount() {
     console.debug('componentDidMount executed')
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate executed', { prevProps, prevState })
   }
 
   render() {
     return (
       <LayoutThemeProvider>
+        <button onClick={() => this.setState({ changed: !this.changed })}>Change</button>
         <GlobalStyle />
         <Layout />
       </LayoutThemeProvider>
