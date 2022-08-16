@@ -1,27 +1,20 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { Component } from 'react'
 
 import { LayoutThemeProvider } from './contexts'
 
-import GlobalStyle from './styles/global';
-import Layout from './components/Layout';
+import GlobalStyle from './styles/global'
+import Layout from './components/Layout'
 
 
-function App() {
+class App extends Component {
+  render() {
+    return (
+      <LayoutThemeProvider>
+        <GlobalStyle />
+        <Layout />
+      </LayoutThemeProvider>
+    )
+  }
+}
 
-  useEffect(() => {
-    console.debug('useEffect disparado')
-  }, [])
-
-  useLayoutEffect(() => {
-    console.debug('useLayoutEffect disparado')
-  }, [])
-
-  return (
-    <LayoutThemeProvider>
-      <GlobalStyle />
-      <Layout />
-    </LayoutThemeProvider>
-  );
-};
-
-export default App;
+export default App
