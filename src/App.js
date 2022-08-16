@@ -19,6 +19,10 @@ class App extends Component {
     console.log('componentDidUpdate executed', { prevProps, prevState })
   }
 
+  componentDidCatch(error, info) {
+    console.log('componentDidCatch executed', { error, info })
+  }
+
   render() {
     return (
       <LayoutThemeProvider>
