@@ -29,6 +29,12 @@ class App extends Component {
     return true
   }
 
+  componentWillUnmount() {
+    console.log('componentWillUnmount executed')
+
+    return true
+  }
+
   render() {
     return (
       <LayoutThemeProvider>
