@@ -1,12 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Posts from './pages/Posts'
 
 export default function Routes() {
   return (
-    <BrowserRouter>
+    <>
       <Route
         path="/"
         exact
@@ -18,6 +18,6 @@ export default function Routes() {
         exact
         component={Posts}
       />
-    </BrowserRouter>
+    </>
   )
 }

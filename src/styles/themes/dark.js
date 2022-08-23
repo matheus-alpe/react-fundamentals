@@ -1,10 +1,11 @@
-import commonStyles from './common';
+import commonStyles from './common'
 
 export default {
   ...commonStyles,
   backgroundColor: '#222',
   textColor: '#fff',
-  headerBackgroundColor: '#111',
-  footerBackgroundColor: '#111',
-  postBackgroundColor: '#333',
-};
+  headerBackgroundColor: '#000',
+  navBackgroundColor: '#111',
+  footerBackgroundColor: '#000',
+  postBackgroundColor: '#333'
+}

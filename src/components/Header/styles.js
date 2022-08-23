@@ -9,6 +9,11 @@ export const Container = styled.header`
   border-radius: ${({ theme }) => theme.borderRadius};
   justify-content: space-between;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   button {
     font-size: ${({ theme }) => theme.spacing.medium + 'px'};
     cursor: pointer;
