@@ -5,7 +5,7 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
   padding: ${({ theme }) => theme.spacing.medium + 'px'};
-  border-radius: ${({ theme }) => theme.borderRadius + 'px'};
+  border-radius: ${({ theme }) => theme.borderRadius};
 
   h2 {
     margin: 0 0 ${({ theme }) => theme.spacing.small + 'px'};

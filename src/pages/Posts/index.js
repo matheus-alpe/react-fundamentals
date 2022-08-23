@@ -5,7 +5,7 @@ import Post from './Post'
 
 import posts from './posts'
 
-export default class PostsList extends Component {
+export default class Posts extends Component {
   render() {
     return (
       <Container>

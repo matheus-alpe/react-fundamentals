@@ -37,9 +37,6 @@ class App extends Component {
   render() {
     return (
       <LayoutThemeProvider>
-        <button onClick={() => this.setState({ changed: !this.changed })}>
-          Change
-        </button>
         <GlobalStyle />
         <Layout />
       </LayoutThemeProvider>

@@ -7,20 +7,20 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.[fullhash].js',
+    filename: 'bundle.[fullhash].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
+      template: path.resolve(__dirname, 'public', 'index.html')
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ],
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: 'babel-loader'
       },
       {
         test: /\.scss?$/,
@@ -34,10 +34,11 @@ module.exports = {
           },
           'sass-loader'
         ]
-      },
-    ],
+      }
+    ]
   },
   devServer: {
-    port: 3000
-  },
+    port: 3000,
+    historyApiFallback: true
+  }
 }
