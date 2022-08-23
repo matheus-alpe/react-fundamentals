@@ -5,7 +5,6 @@ import { LayoutThemeProvider } from './contexts'
 import GlobalStyle from './styles/global'
 import Layout from './components/Layout'
 
-
 class App extends Component {
   state = {
     changed: false
@@ -38,7 +37,9 @@ class App extends Component {
   render() {
     return (
       <LayoutThemeProvider>
-        <button onClick={() => this.setState({ changed: !this.changed })}>Change</button>
+        <button onClick={() => this.setState({ changed: !this.changed })}>
+          Change
+        </button>
         <GlobalStyle />
         <Layout />
       </LayoutThemeProvider>

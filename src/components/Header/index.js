@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container } from './styles';
+import React from 'react'
+import { Container } from './styles'
 
 import ThemeSwitcher from '../ThemeSwitcher'
 
@@ -9,5 +9,5 @@ export default function Header() {
       <h1>JStack's Blog</h1>
       <ThemeSwitcher />
     </Container>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 
 import { ThemeContext } from '../../contexts'
 
@@ -12,5 +12,5 @@ export default function ThemeSwitcher() {
     >
       {theme === 'dark' ? '🌞' : '🌚'}
     </button>
-  );
+  )
 }

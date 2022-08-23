@@ -11,8 +11,8 @@ export class LayoutThemeProvider extends Component {
   }
 
   handleToggleTheme = () => {
-    this.setState(prevState => {
-      const theme = (prevState.theme === 'dark' ? 'light' : 'dark')
+    this.setState((prevState) => {
+      const theme = prevState.theme === 'dark' ? 'light' : 'dark'
       window.localStorage.setItem('theme', theme)
 
       return {
@@ -29,7 +29,7 @@ export class LayoutThemeProvider extends Component {
         <ThemeContext.Provider
           value={{
             theme,
-            onToggleTheme: this.handleToggleTheme,
+            onToggleTheme: this.handleToggleTheme
           }}
         >
           {this.props.children}
